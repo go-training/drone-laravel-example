@@ -1,6 +1,6 @@
 
 composer:
-	composer install
+	composer install --prefer-dist
 
 yarn:
 	yarn install
