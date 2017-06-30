@@ -25,6 +25,7 @@ pipeline:
       - cp .env.example .env
       - composer install --prefer-dist
       - php artisan key:generate
+      - php artisan migrate
       - ./vendor/bin/phpunit
 
 services:
@@ -37,6 +38,6 @@ services:
   postgres:
     image: postgres:9.5.5
     environment:
-      - POSTGRES_DB=test
-      - POSTGRES_USER=test
-      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=homestead
+      - POSTGRES_USER=homestead
+      - POSTGRES_PASSWORD=secret
