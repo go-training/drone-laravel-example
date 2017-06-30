@@ -28,6 +28,14 @@ pipeline:
       - php artisan migrate
       - ./vendor/bin/phpunit
 
+  fb:
+    image: appleboy/drone-facebook
+    pull: true
+    to: 1234973386524610
+    when:
+      event: [ push, pull_request ]
+      status: [ success, failure ]
+
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.3.0
@@ -41,11 +49,3 @@ services:
       - POSTGRES_DB=homestead
       - POSTGRES_USER=homestead
       - POSTGRES_PASSWORD=secret
-
-  fb:
-    image: appleboy/drone-facebook
-    pull: true
-    to: 1234973386524610
-    when:
-      event: [ push, pull_request ]
-      status: [ success, failure ]
