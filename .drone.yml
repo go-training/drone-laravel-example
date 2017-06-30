@@ -3,3 +3,16 @@ clone:
     image: plugins/git
     depth: 50
     tags: true
+
+pipeline:
+
+  node_test:
+    image: node:8
+    pull: true
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder .yarn-cache
+      - yarn install
+      - yarn run production
