@@ -41,3 +41,11 @@ services:
       - POSTGRES_DB=homestead
       - POSTGRES_USER=homestead
       - POSTGRES_PASSWORD=secret
+
+  fb:
+    image: appleboy/drone-facebook
+    pull: true
+    to: 1234973386524610
+    when:
+      event: [ push, pull_request ]
+      status: [ success, failure ]
