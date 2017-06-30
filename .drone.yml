@@ -5,7 +5,6 @@ clone:
     tags: true
 
 pipeline:
-
   frontend:
     image: node:8.1.2
     commands:
@@ -23,3 +22,17 @@ pipeline:
       - composer -V
       - composer install --prefer-dist
       - ./vendor/bin/phpunit
+
+services:
+  elasticsearch:
+    context: docker/elasticsearch
+
+  redis:
+    image: redis:latest
+
+  postgres:
+    image: postgres:9.5.5
+    environment:
+      - POSTGRES_DB=test
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=
