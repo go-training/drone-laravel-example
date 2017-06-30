@@ -7,6 +7,7 @@ clone:
 pipeline:
   frontend:
     image: node:8.1.2
+    group: laravel
     commands:
       - node -v
       - npm -v
@@ -17,6 +18,7 @@ pipeline:
 
   backend:
     image: laradock/workspace:1.8-71
+    group: laravel
     commands:
       - php -v
       - composer -V
