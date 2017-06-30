@@ -20,6 +20,7 @@ pipeline:
     commands:
       - php -v
       - composer -V
+      - cp .env.example .env
       - composer install --prefer-dist
       - ./vendor/bin/phpunit
 
