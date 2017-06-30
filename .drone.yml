@@ -6,7 +6,7 @@ clone:
 
 pipeline:
 
-  node_test:
+  frontend:
     image: node:8.1.2
     pull: true
     commands:
