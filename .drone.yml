@@ -21,6 +21,7 @@ pipeline:
       - php -v
       - composer -V
       - cp .env.example .env
+      - php artisan key:generate
       - composer install --prefer-dist
       - ./vendor/bin/phpunit
 
