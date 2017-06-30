@@ -7,7 +7,7 @@ clone:
 pipeline:
 
   node_test:
-    image: node:8
+    image: node:8.1.2
     pull: true
     commands:
       - node -v
