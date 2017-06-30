@@ -31,6 +31,7 @@ pipeline:
   fb:
     image: appleboy/drone-facebook
     pull: true
+    secrets: [ fb_page_token, fb_verify_token ]
     to: 1234973386524610
     when:
       event: [ push, pull_request ]
