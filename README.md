@@ -60,3 +60,11 @@ services:
       - POSTGRES_USER=homestead
       - POSTGRES_PASSWORD=secret
 ```
+
+## Testing your Drone config
+
+Please try the following command to test drone config in local machine.
+
+```sh
+$ drone exec
+``` 
